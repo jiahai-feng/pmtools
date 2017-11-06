@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/sampling.js"></script>  
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href="css/normalize.css">
+        <link rel='stylesheet' href="css/skeleton.css">
+        <link rel='stylesheet' href="css/sampling.css">
+    </head>
+<body>
+    <h4 style="padding: 30px 30px 0px 30px;">MIL-STD-105E single sample calculator</h4>
+    <div style="padding: 30px; border-top: 1px solid #eee">
+        <div class='container' id='form'>
+            <form id="creds" class='container'>
+                <div class="row">
+                    <div class='one-half column'><label for="lotsize">Lot Size:</label></div>
+                    <div class='one-half column'><input class='u-full-width' type = "number" id="lotsize" name = "lotsize"></div>
+                </div>
+                <div class="row">
+                    <div class='one-half column'><label for="inspectionlevel">Inspection Level:</label></div>
+                    <div class='one-half column'>
+                        <select name = "inspectionlevel" class='u-full-width' id='inspectionlevel'>
+                        <optgroup label="Special Inspection Level">
+                            <option value="S-1">Special S-1</option>
+                            <option value="S-2">Special S-2</option>
+                            <option value="S-3">Special S-3</option>
+                            <option value="S-4">Special S-4</option>
+                        </optgroup>
+                        <optgroup label="General Inspection Level">
+                            <option value="I">General I</option>
+                            <option value="II">General II</option>
+                            <option value="III">General III</option>
+                        </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='one-half column'><label for="aql">Acceptance Quality Level: </label></div>
+                    <div class='one-half column'>
+                        <select name="aql" id="aql" class='u-full-width'>
+                            <option value='0'>0.010</option>
+                            <option value='1'>0.015</option>
+                            <option value='2'>0.025</option>
+                            <option value='3'>0.040</option>
+                            <option value='4'>0.065</option>
+                            <option value='5'>0.10</option>
+                            <option value='6'>0.15</option>
+                            <option value='7'>0.25</option>
+                            <option value='8'>0.40</option>
+                            <option value='9'>0.65</option>
+                            <option value='10'>1.0</option>
+                            <option value='11'>1.5</option>
+                            <option value='12'>2.5</option>
+                            <option value='13'>4.0</option>
+                            <option value='14'>6.5</option>
+                            <option value='15'>10</option>
+                            <option value='16'>15</option>
+                            <option value='17'>25</option>
+                            <option value='18'>40</option>
+                            <option value='19'>65</option>
+                            <option value='20'>100</option>
+                            <option value='21'>150</option>
+                            <option value='22'>250</option>
+                            <option value='23'>400</option>
+                            <option value='24'>650</option>
+                            <option value='25'>1000</option>
+                        </select>
+                    </div>
+                </div>
+                <button class='button-primary' type = "submit">submit</button>
+            </form>
+        </div>
+        <div class='container' id = 'interim'>
+            <h4>Processing...</h4>
+        </div>
+        <div class='container' id = 'results'>
+            <h4>Results</h4>
+            Based on the given <strong>lot size <span id ='indicatedlotsize'></span></strong> and the <strong>inspection level <span id='indicatedinspectionlevel'></span></strong>, the <strong>initial sample size code is <span id="interimsamplesizecode"></span></strong>.
+            <br/>
+            Based on the <strong>acceptance quality limit <span id="indicatedaql"></span></strong>, the actual sample size code, sample size and acceptance limit are generated below. Note that the actual sample size code could be different from the earlier sample size code.
+            <div class="row resultsdisplay">
+                <div class='five columns'>
+                    <strong>Sample size code (actual)</strong>
+                </div>
+                <div class='three columns' id = "displaysamplesizecode">
+                Error!
+                </div>
+            </div>
+            <div class="row resultsdisplay">
+                <div class='five columns'>
+                <strong>Sample size</strong>
+                </div>
+                <div class='three columns'  id = "displaysamplesize">
+                Error!
+                </div>
+            </div>
+            <div class="row resultsdisplay">
+                <div class='five columns'>
+                    <strong>Acceptance limit</strong>
+                    (Accept if number of defects equals to this or below, reject if above)
+                </div>
+                <div class='three columns' id = "displayacceptance">
+                Error!
+                </div>
+            </div>
+            <div class="button" id="returntoform">Back to form</div>
+        </div>
+    </div>
+</body>
+</html>
