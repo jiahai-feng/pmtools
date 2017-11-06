@@ -1,0 +1,14 @@
+.resultsdisplay {
+    padding: 20px 40px 5px 20px;
+}
+
+#interim{
+    display: 'block';
+}
+#results{
+    display: 'block';
+}
+
+#returntoform{
+    margin-top: 20px; margin-bottom:30px;
+}
