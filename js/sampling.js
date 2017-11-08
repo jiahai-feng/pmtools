@@ -55,7 +55,7 @@ var sampleCodeTable =
 
 
 var AQLTable = {
-    AQL: ["0.01","0.015","0.025","0.04","0.065","0.1","0.15","0.25","0.4","0.65","1","1.5","2.5","4","6.5","10","15","25","40","65","100","150","250","400","650","1000"],
+    AQL: ["0.010","0.015","0.025","0.040","0.065","0.10","0.15","0.25","0.40","0.65","1.0","1.5","2.5","4.0","6.5","10","15","25","40","65","100","150","250","400","650","1000"],
     invCode: { 
         A: 0,
         B: 1,
@@ -152,7 +152,7 @@ window.onload = function(){
             document.querySelector('#indicatedlotsize').innerHTML           = lotsize;
             document.querySelector('#indicatedinspectionlevel').innerHTML   = insp;
             document.querySelector('#interimsamplesizecode').innerHTML      = code;
-            document.querySelector('#indicatedaql').innerHTML               = aql;
+            document.querySelector('#indicatedaql').innerHTML               = AQLTable.AQL[aql];
             document.querySelector('#displaysamplesizecode').innerHTML      = r.code;
             document.querySelector('#displaysamplesize').innerHTML          = r.samplesize;
             document.querySelector('#displayacceptance').innerHTML          = r.acceptance;
